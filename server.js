@@ -17,9 +17,12 @@ app.get("/",(req,res)=>{
 
 app.post("/api/admin",async (req,res)=> {
     try{
-        console.log(req.body);
-        const reponse = await axios.post(`${APIurl}/adminlogin`, req.body);
-        console.log(reponse.data);
+        const repsonse = await axios.post(`${APIurl}/adminlogin`, req.body);
+        if(repsonse.data){
+            res.render("Admin.ejs");
+        }else{
+            res.render("index.ejs",{message: "User id and password not matched."});
+        }
     }catch(error){
         console.error("Failed to make request:",error.message);
         res.status(500).send("failed to fetch activity. Please try again.");

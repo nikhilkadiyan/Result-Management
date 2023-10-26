@@ -22,7 +22,6 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 app.post("/adminlogin", (req,res)=>{
-    console.log(req.body);
     Admin.findOne({email: req.body.email}).then((data)=>{
         if(data !== null){
             bcrypt.compare(req.body.password, data.password, function(err, result) {

@@ -13,6 +13,9 @@
 				<input type="email" name="email" placeholder="Email" />
 				<input type="password" name="password" placeholder="Password" />
 				<a id="Admin" href="#Admin">or login as <u>Admin</u></a>
+				<% if(locals.message){%>
+					<p class="warning"><%= message %></p>
+				<%}%>
 				<button type="submit">Log In</button>
 			</form>
             <form  class="Admin" action="/api/admin" method="post">
@@ -21,6 +24,9 @@
 				<input type="email" name="email" placeholder="Email" />
 				<input type="password" name="password" placeholder="Password" />
 				<a id="Student" href="#Student">or login as <u>Student</u></a>
+				<% if(locals.message){%>
+					<p class="warning"><%= message %></p>
+				<%}%>
 				<button type="submit">Log In</button>
 			</form>
 		</div>
