@@ -8,8 +8,8 @@ const app = express();
 const APIurl = "http://localhost:4000"
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 
+app.use(bodyParser.json());
 
 app.get("/",(req,res)=>{
     res.render("index.ejs");

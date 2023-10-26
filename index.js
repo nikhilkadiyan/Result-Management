@@ -18,6 +18,7 @@ const Admin = mongoose.model('Admin',adminSchema);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+
 app.use(bodyParser.json());
 
 app.post("/adminlogin", (req,res)=>{
