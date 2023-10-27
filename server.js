@@ -19,6 +19,19 @@ app.get("/studentregister",(req,res)=>{
     res.render("studentregister.ejs");
 });
 
+app.post("/studentregister/student", async(req,res) =>{
+    try{
+        const response = await axios.post(`${APIurl}/studentregister`, req.body);
+        if(response.data){
+            res.render("student.ejs");
+        }else{
+            res.render("studentregister.ejs",{message: "*student can not be registered."});
+        }
+    }catch(error){
+        console.error("Failed to make request:",error.message);
+        res.status(500).send("failed to fetch activity. Please try again.");
+    }
+});
 app.post("/api/admin",async (req,res)=> {
     try{
         const repsonse = await axios.post(`${APIurl}/adminlogin`, req.body);
@@ -33,8 +46,18 @@ app.post("/api/admin",async (req,res)=> {
     }
 });
 
-app.post("/student",(req,res)=>{
-    console.log("student login");
+app.post("/api/student",async(req,res)=>{
+    try{
+        const repsonse = await axios.post(`${APIurl}/studentlogin`, req.body);
+        if(repsonse.data){
+            res.render("student.ejs");
+        }else{
+            res.render("index.ejs",{message: "User id and password not matched."});
+        }
+    }catch(error){
+        console.error("Failed to make request:",error.message);
+        res.status(500).send("failed to fetch activity. Please try again.");
+    }
 });
 
 

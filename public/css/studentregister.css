@@ -144,3 +144,7 @@ input {
 	height: 10rem;
 	width: 10rem;
 }
+
+.warning{
+	color: rgb(236, 109, 109);
+}

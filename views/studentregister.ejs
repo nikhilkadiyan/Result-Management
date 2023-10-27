@@ -7,11 +7,14 @@
 <body>
 	<div class="container" id="container" >
 		<div class="form-container log-in-container">
-			<form class="Student " action="/student" method="post">
+			<form class="Student " action="/studentregister/student" method="post">
 				<h1>Register</h1><br>
 				 Student
-				<input type="email" name="email" placeholder="Email" />
-				<input type="password" name="password" placeholder="Password" />
+				<input type="email" name="email" placeholder="Email" required/>
+				<input type="password" name="password" placeholder="Password" required/>
+				<% if(locals.message){%>
+					<p class="warning"><%=message%></p>
+				<%}%>
 				<button type="submit">Register</button>
 			</form> 
 		</div>

@@ -14,7 +14,13 @@ const adminSchema = {
     password: String
 }
 
+const studentSchema = {
+    email: String,
+    password: String
+}
+
 const Admin = mongoose.model('Admin',adminSchema);
+const Student = mongoose.model('Student',studentSchema);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -40,6 +46,40 @@ app.post("/adminlogin", (req,res)=>{
     });
 });
 
+app.post("/studentlogin",(req,res)=>{
+    Student.findOne({email: req.body.email}).then((data)=>{
+        if(data !== null){
+            bcrypt.compare(req.body.password, data.password, function(err, result) {
+                if(result === true){
+                    const ans= true;
+                    res.json(ans);
+                }else{
+                    const ans= false;
+                    res.json(ans);
+                }
+            });
+        }else{
+            const ans= false;
+            res.json(ans);
+        }
+    });
+});
+
+app.post("/studentregister",(req,res)=>{
+    const email= req.body.email;
+    const password= req.body.password;
+    Student.findOne({email: email}).then((data)=>{
+        if(data === null){
+            bcrypt.hash(password, saltRounds, function(err, hash) {
+                const newStudent = new Student({email: email,password: hash});
+                newStudent.save().then(()=> console.log("New Student registered"));
+            });
+            res.json(true);
+        }else{
+            res.json(false);
+        }
+    })
+});
 
 app.listen(port,function(){
     console.log(`API server started at port ${port}`);
