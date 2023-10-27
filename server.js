@@ -15,6 +15,10 @@ app.get("/",(req,res)=>{
     res.render("index.ejs");
 });
 
+app.get("/studentregister",(req,res)=>{
+    res.render("studentregister.ejs");
+});
+
 app.post("/api/admin",async (req,res)=> {
     try{
         const repsonse = await axios.post(`${APIurl}/adminlogin`, req.body);
