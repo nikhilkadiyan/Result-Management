@@ -10,8 +10,8 @@
 			<form class="Student " action="/api/student" method="post">
 				<h1>Login</h1><br>
 				 Student
-				<input type="email" name="email" placeholder="Email" />
-				<input type="password" name="password" placeholder="Password" />
+				<input type="email" name="email" placeholder="Email" required/>
+				<input type="password" name="password" placeholder="Password" required/>
 				<a id="Admin" href="#Admin">or login as <u>Admin</u></a>
 				<% if(locals.message){%>
 					<p class="warning"><%= message %></p>
@@ -23,8 +23,8 @@
             <form  class="Admin" action="/api/admin" method="post">
 				<h1>Login</h1><br>
 				Admin
-				<input type="email" name="email" placeholder="Email" />
-				<input type="password" name="password" placeholder="Password" />
+				<input type="email" name="email" placeholder="Email" required/>
+				<input type="password" name="password" placeholder="Password" required/>
 				<a id="Student" href="#Student">or login as <u>Student</u></a>
 				<% if(locals.message){%>
 					<p class="warning"><%= message %></p>

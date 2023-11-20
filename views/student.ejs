@@ -1,70 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="/css/student.css">
-     
-    <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Dashboard Panel</title>
+  <!----======== CSS ======== -->
+  <link rel="stylesheet" href="/css/student.css">
+
+  <!----===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title>Student Dashboard Panel</title>
 </head>
+
 <body>
-    <nav>
-        <div class="logo-name">
-            <div class="logo-image">
-               <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/JSSATE_Noida.png" alt="">
+  <nav>
+    <div class="logo-name">
+      <div class="logo-image">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/JSSATE_Noida.png" alt="">
+      </div>
+
+      <span class="logo_name">Student</span>
+    </div>
+
+    <div class="menu-items">
+      <ul class="nav-links">
+        <li><a id="profile-link" href="#profile-link">
+            <i class="uil uil-smile"></i>
+            <span class="link-name ">Profile</span>
+          </a></li>
+        <li><a id="view-result-link" href="#view-result-link">
+            <i class="uil uil-eye"></i>
+            <span class="link-name">View Result</span>
+          </a></li>
+        <li><a id="contact-form" href="#contact-form">
+            <i class="uil uil-message"></i>
+            <span class="link-name">Feedback</span>
+          </a></li>
+      </ul>
+
+      <ul class="logout-mode">
+        <li><a href="#">
+            <i class="uil uil-signout"></i>
+            <span class="link-name">Logout</span>
+          </a></li>
+
+        <li class="mode">
+          <a href="#">
+            <i class="uil uil-moon"></i>
+            <span class="link-name">Dark Mode</span>
+          </a>
+          <div class="mode-toggle">
+            <span class="switch"></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="dashboard">
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+
+      <img src="/img/sty.png" alt="">
+    </div>
+    <!-------------------------------profile section------------------------------------------------------------------>
+    <div id="profile-section" style="display: block;">
+      <div class="profile">
+        <div class="profile_body">
+          <div class="profile_container">
+            <h2 class="title">Student Profile</h2>
+            <br><br>
+            <form id="profileForm">
+              <div class="column">
+                <label for="First_Name">Full Name:</label>
+                <input type="text" id="Name" name="Name" placeholder="Name" readonly>
+
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name" readonly>
+
+                <label for="email">Email Id:</label>
+                <input type="email" id="email" name="email" placeholder="email" readonly>
+
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" name="courseName" placeholder="Course" readonly>
+
+                <label for="admissionSession">Admission Session:</label>
+                <input type="text" id="admissionSession" name="admissionSession" placeholder="Session" readonly>
+
+              </div>
+
+              <div class="column">
+
+                <label for="Last_Name">Roll no:</label>
+                <input type="text" id="Roll_no" name="Roll_no" placeholder="Roll_no" readonly>
+
+                <label for="motherName">Enrollment no:</label>
+                <input type="text" id="Enrollment_no" name="Enrollment_no" placeholder="Enrollment_no" readonly>
+
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" placeholder="Gender" readonly>
+
+                <label for="branch">Branch:</label>
+                <input type="text" id="Branch" name="Branch" value="MCA" placeholder="Branch" readonly>
+
+                <label for="instituteCode">Institute's Name:</label>
+                <input type="text" id="instituteCode" name="instituteCode" placeholder="Institute's Name:" readonly>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-------------------------------view result  section------------------------------------------------------------------>
+    <div id="view-result-section" style="display: none;">
+      <h1><br><br><br>view result section</h1>
+    </div>
+    <!-------------------------------contact section------------------------------------------------------------------>
+    <div id="contact-section" style="display: none">
+      <div id="contact-form" class="contact_body">
+        <div class="container">
+          <div class="content">
+            <div class="left-side">
+              <div class="address details">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="topic">Address</div>
+                <div class="text-one">Noida Sector - 62</div>
+                <div class="text-two">Uttar Pradesh</div>
+              </div>
+              <div class="phone details">
+                <i class="fas fa-phone-alt"></i>
+                <div class="topic">Phone</div>
+                <div class="text-one">0120-2401442,</div>
+                <div class="text-two">2401449, 2400115</div>
+              </div>
+              <div class="email details">
+                <i class="fas fa-envelope"></i>
+                <div class="topic">Email</div>
+                <div class="text-one">principal@jssaten.ac.in</div>
+                <div class="text-two">dean.research@jssaten.ac.in</div>
+              </div>
             </div>
-
-            <span class="logo_name">Student</span>
-        </div>
-
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li><a href="#">
-                    <i class="uil uil-eye"></i>
-                    <span class="link-name">View Result</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-smile"></i>
-                    <span class="link-name">Profile</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-message"></i>
-                    <span class="link-name">Feedback</span>
-                </a></li>
-            </ul>
-            
-            <ul class="logout-mode">
-                <li><a href="#">
-                    <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
-                </a></li>
-
-                <li class="mode">
-                    <a href="#">
-                        <i class="uil uil-moon"></i>
-                    <span class="link-name">Dark Mode</span>
-                </a>
-
-                <div class="mode-toggle">
-                  <span class="switch"></span>
+            <div class="right-side">
+              <div class="topic-text">Send us a message</div>
+              <form action="#">
+                <div class="input-box">
+                  <input type="text" placeholder="Enter your name">
                 </div>
-            </li>
-            </ul>
+                <div class="input-box">
+                  <input type="text" placeholder="Enter your email">
+                </div>
+                <div class="input-box message-box">
+                  <input type="text" placeholder="Enter your message">
+                </div>
+                <div class="button">
+                  <input type="button" value="Send Now">
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-    </nav>
-
-    <section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-            <img src="/images/sty.png" alt="">
-        </div>
-    </section>
-    <script src="/js/student.js"></script>
+      </div>
+    </div>
+    </div>
+    <!-------------------------------end of contact section------------------------------------------------------------------>
+  </section>
+  <script src="/js/Student.js"></script>
+  <script src="/js/profile_valid.js"></script>
 </body>
+
 </html>

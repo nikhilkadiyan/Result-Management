@@ -7,6 +7,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+  
+
 :root{
     /* ===== Colors ===== */
     --primary-color: #0E4BF1;
@@ -56,6 +58,9 @@ body.dark{
 }
 
 ::-webkit-scrollbar-thumb:hover {
+    background: #0b3cc1;
+}
+::-webkit-scrollbar-thumb .click {
     background: #0b3cc1;
 }
 
@@ -455,4 +460,374 @@ nav.close ~ .dashboard .top{
         left: 0;
         width: 100%;
     }
+    
 }
+
+
+
+/*------------------------------------contact css--------------------------- */
+.contact_body{
+    min-height: 100vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.container{
+    width: 85%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 30px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .container .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container .content .left-side{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    position: relative;
+  }
+  .content .left-side::before{
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #afafb6;
+  }
+  .content .left-side .details{
+    margin: 14px;
+    text-align: center;
+  }
+  .content .left-side .details i{
+    font-size: 30px;
+    color: #5a47ff;
+    margin-bottom: 10px;
+  }
+  .content .left-side .details .topic{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .content .left-side .details .text-one,
+  .content .left-side .details .text-two{
+    font-size: 14px;
+    color: #afafb6;
+  }
+  .container .content .right-side{
+    width: 75%;
+    margin-left: 75px;
+  }
+  .content .right-side .topic-text{
+    font-size: 23px;
+    font-weight: 600;
+    color:  #5a47ff;
+  }
+  .right-side .input-box{
+    height: 50px;
+    width: 100%;
+    margin: 12px 0;
+  }
+  .right-side .input-box input,
+  .right-side .input-box textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #F0F1F8;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+  }
+  .right-side .message-box{
+    min-height: 110px;
+  }
+  .right-side .input-box textarea{
+    padding-top: 6px;
+  }
+  .right-side .button{
+    display: inline-block;
+    margin-top: 12px;
+  }
+  .right-side .button input[type="button"]{
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #5a47ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .button input[type="button"]:hover{
+    background:  #5a47ff;
+  }
+
+  
+  @media (max-width: 950px) {
+    .container{
+      width: 90%;
+      padding: 30px 40px 40px 35px ;
+    }
+    .container .content .right-side{
+     width: 75%;
+     margin-left: 55px;
+  }
+  }
+  @media (max-width: 820px) {
+    .container{
+      margin: 40px 0;
+      height: 100%;
+    }
+    .container .content{
+      flex-direction: column-reverse;
+    }
+   .container .content .left-side{
+     width: 100%;
+     flex-direction: row;
+     margin-top: 40px;
+     justify-content: center;
+     flex-wrap: wrap;
+   }
+   .container .content .left-side::before{
+     display: none;
+   }
+   .container .content .right-side{
+     width: 100%;
+     margin-left: 0;
+   }
+  }
+  /* Add these styles for dark mode */
+body.dark .contact_body {
+    background-color: #242526; /* Set your desired dark background color */
+    color: #ffffff; /* Set your desired text color in dark mode */
+}
+body.dark .container {
+    background: #3A3B3C; /* Set your desired background color for the container in dark mode */
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2); /* Adjust box shadow for dark mode */
+    border: 1px solid #555; /* Set your desired frame color for the container in dark mode */
+}
+
+body.dark .left-side,
+body.dark .right-side {
+    background-color: #3A3B3C; /* Set your desired background color for left and right sides in dark mode */
+}
+
+body.dark .address.details,
+body.dark .phone.details,
+body.dark .email.details {
+    border: 1px solid #3A3B3C; /* Set your desired border color for address, phone, and email details in dark mode */
+}
+
+body.dark .input-box input,
+body.dark .button input {
+    background-color: #3A3B3C; /* Set your desired input and button background color in dark mode */
+    color:#3A3B3C; /* Set your desired text color for input and button in dark mode */
+}
+body.dark .right-side .topic-text {
+    color: #fff; /* Adjust topic text color for dark mode */
+}
+
+body.dark .right-side .button input[type="button"] {
+    background: #555; /* Set your desired button background color in dark mode */
+    color: #FFF; /* Set your desired button text color in dark mode */
+    border: 1px solid #555; /* Set your desired button border color in dark mode */
+}
+
+body.dark .right-side .input-box input:valid,
+body.dark .right-side .input-box textarea:valid {
+    background: #444; /* Set your desired background color for valid input fields in dark mode */
+    color: #FFF; /* Set your desired text color for valid input fields in dark mode */
+    border: 1px solid #888; /* Set your desired border color for valid input fields in dark mode */
+}
+
+/*............................................ profile css ............................................ */
+    /* Shared styles for both light and dark modes */
+.profile_body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profile_container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile_container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.profile_container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100px;
+    border-radius: 5px;
+    background: #5a47ff;
+  }
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #000;
+    display: block;
+}
+
+input,
+#photoPreview {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#photoPreview {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+ 
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Dark mode styles */
+body.dark .profile_container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100px;
+    border-radius: 5px;
+    background: #FFF;
+  }
+body.dark .profile_body {
+    background-color: #242526;
+    color: #FFF;
+}
+
+body.dark .profile_container {
+    background-color: #3A3B3C;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    border: 1px solid #555;
+}
+
+body.dark h2 {
+    color: #FFF;
+}
+
+body.dark label {
+    color: #888;
+}
+
+body.dark input,
+body.dark #photoPreview {
+    background-color: #444;
+    color: #FFF;
+    border: 1px solid #888;
+}
+
+body.dark button {
+    background-color: #555;
+    color: #FFF;
+}
+
+body.dark button:hover {
+    background-color:#7c7979;
+}
+
+body.dark #photoLabel {
+    background-color: #555; /* Set your desired background color for dark mode */
+    color: #fff; /* Set your desired text color in dark mode */
+    border: 1px solid #888;   
+}
+
+body.dark textarea {
+    background-color: #242526; /* Set your desired text color for input and textarea in dark mode */
+}
+/* Add the following styles to your existing CSS */
+#photoPreviewContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+}
+
+#photoLabel {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    padding: 2px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    margin-right: 25px;
+}
+
+#photo {
+    display: none; /* Hide the default file input */
+}
+
+#photoPreview {
+    border-radius: 0 4px 0 0;
+    margin-left: 16px; /* Add some space between the photo and the form */
+    background-position: center center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 600px) {
+    #photoPreviewContainer {
+        align-items: flex-start; /* Adjust alignment for larger screens if needed */
+    }
+
+    .column {
+        width: 48%;
+        margin-bottom: 0;
+    }
+}
+    
+
