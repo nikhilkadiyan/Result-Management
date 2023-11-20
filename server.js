@@ -23,7 +23,8 @@ app.post("/studentregister/student", async(req,res) =>{
     try{
         const response = await axios.post(`${APIurl}/studentregister`, req.body);
         if(response.data){
-            res.render("student.ejs");
+            //const resultData = await axios.post(`${APIurl}/getResult`,req.body);
+            res.render("student.ejs",{info: response.data});
         }else{
             res.render("studentregister.ejs",{message: "*student can not be registered."});
         }
@@ -48,9 +49,10 @@ app.post("/api/admin",async (req,res)=> {
 
 app.post("/api/student",async(req,res)=>{
     try{
-        const repsonse = await axios.post(`${APIurl}/studentlogin`, req.body);
-        if(repsonse.data){
-            res.render("student.ejs");
+        const response = await axios.post(`${APIurl}/studentlogin`, req.body);
+        if(response.data){
+            const resultData = await axios.post(`${APIurl}/getResult`,req.body);
+            res.render("student.ejs",{info: resultData.data});
         }else{
             res.render("index.ejs",{message: "User id and password not matched."});
         }

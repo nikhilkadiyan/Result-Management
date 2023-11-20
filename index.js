@@ -19,8 +19,20 @@ const studentSchema = {
     password: String
 }
 
+const resultSchema = {
+    name: String,
+    fatherName: String,
+    rollno: Number,
+    enrollmentno: Number,
+    email: String,
+    gender: String,
+    admissionSession: String,
+    instituteName: String
+}
+
 const Admin = mongoose.model('Admin',adminSchema);
 const Student = mongoose.model('Student',studentSchema);
+const Result = mongoose.model('Result',resultSchema);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -51,16 +63,13 @@ app.post("/studentlogin",(req,res)=>{
         if(data !== null){
             bcrypt.compare(req.body.password, data.password, function(err, result) {
                 if(result === true){
-                    const ans= true;
-                    res.json(ans);
+                    res.json(true);
                 }else{
-                    const ans= false;
-                    res.json(ans);
+                    res.json(false);
                 }
             });
         }else{
-            const ans= false;
-            res.json(ans);
+            res.json(false);
         }
     });
 });
@@ -77,6 +86,17 @@ app.post("/studentregister",(req,res)=>{
             res.json(true);
         }else{
             res.json(false);
+        }
+    })
+});
+
+app.post("/getResult",(req,res)=>{
+    const email=req.body.email;
+    Result.findOne({email: email}).then((info)=>{
+        if(info !== null){
+            res.json(info);
+        }else{
+            res.json(null);
         }
     })
 });
