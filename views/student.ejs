@@ -67,54 +67,105 @@
       <img src="/img/sty.png" alt="">
     </div>
     <!-------------------------------profile section------------------------------------------------------------------>
-    <div id="profile-section" style="display: block;">
-      <div class="profile">
-        <div class="profile_body">
-          <div class="profile_container">
-            <h2 class="title">Student Profile</h2>
-            <br><br>
-            <form id="profileForm">
-              <div class="column">
-                <label for="First_Name">Full Name:</label>
-                <input type="text" id="Name" name="Name" placeholder="Name" readonly>
-
-                <label for="fatherName">Father's Name:</label>
-                <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name" readonly>
-
-                <label for="email">Email Id:</label>
-                <input type="email" id="email" name="email" placeholder="email" readonly>
-
-                <label for="courseName">Course Name:</label>
-                <input type="text" id="courseName" name="courseName" placeholder="Course" readonly>
-
-                <label for="admissionSession">Admission Session:</label>
-                <input type="text" id="admissionSession" name="admissionSession" placeholder="Session" readonly>
-
-              </div>
-
-              <div class="column">
-
-                <label for="Last_Name">Roll no:</label>
-                <input type="text" id="Roll_no" name="Roll_no" placeholder="Roll_no" readonly>
-
-                <label for="motherName">Enrollment no:</label>
-                <input type="text" id="Enrollment_no" name="Enrollment_no" placeholder="Enrollment_no" readonly>
-
-                <label for="gender">Gender:</label>
-                <input type="text" id="gender" name="gender" placeholder="Gender" readonly>
-
-                <label for="branch">Branch:</label>
-                <input type="text" id="Branch" name="Branch" value="MCA" placeholder="Branch" readonly>
-
-                <label for="instituteCode">Institute's Name:</label>
-                <input type="text" id="instituteCode" name="instituteCode" placeholder="Institute's Name:" readonly>
-              </div>
-            </form>
+    <%if(locals.info !== null){%>
+      <div id="profile-section" style="display: block;">
+        <div class="profile">
+          <div class="profile_body">
+            <div class="profile_container">
+              <h2 class="title">Student Profile</h2>
+              <br><br>
+              <form id="profileForm">
+                <div class="column">
+                  <label for="First_Name">Full Name:</label>
+                  <input type="text" id="Name" name="Name"  value="<%=info.name %>" placeholder="Name" readonly>
+  
+                  <label for="fatherName">Father's Name:</label>
+                  <input type="text" id="fatherName" value="<%=info.fatherName%>" name="fatherName" placeholder="Father's Name" readonly>
+  
+                  <label for="email">Email Id:</label>
+                  <input type="email" id="email" name="email" value="<%=info.email%>" placeholder="email" readonly>
+  
+                  <label for="courseName">Course Name:</label>
+                  <input type="text" id="courseName" name="courseName"value="MCA" placeholder="Course" readonly>
+  
+                  <label for="admissionSession">Admission Session:</label>
+                  <input type="text" id="admissionSession" name="admissionSession" value="<%=info.admissionSession%>" placeholder="Session" readonly>
+  
+                </div>
+  
+                <div class="column">
+  
+                  <label for="Roll_no">Roll no:</label>
+                  <input type="text" id="Roll_no" name="Roll_no" value="<%=info.rollno%>" placeholder="Roll_no" readonly>
+  
+                  <label for="Enrollment_no">Enrollment no:</label>
+                  <input type="text" id="Enrollment_no" name="Enrollment_no" value="<%=info.enrollmentno%>" placeholder="Enrollment_no" readonly>
+  
+                  <label for="gender">Gender:</label>
+                  <input type="text" id="gender" name="gender" value="<%=info.gender%>" placeholder="Gender" readonly>
+  
+                  <label for="branch">Branch:</label>
+                  <input type="text" id="Branch" name="Branch" value="MCA" placeholder="Branch" readonly>
+  
+                  <label for="instituteCode">Institute's Name:</label>
+                  <input type="text" id="instituteCode" name="instituteCode" value="<%=info.instituteName%>" placeholder="Institute's Name:" readonly>
+                </div>
+              </form>
+            </div>
+  
           </div>
-
         </div>
       </div>
-    </div>
+    <%}else{%>
+      <div id="profile-section" style="display: block;">
+        <div class="profile">
+          <div class="profile_body">
+            <div class="profile_container">
+              <h2 class="title">Student Profile</h2>
+              <br><br>
+              <form id="profileForm">
+                <div class="column">
+                  <label for="First_Name">Full Name:</label>
+                  <input type="text" id="Name" name="Name" placeholder="Name" readonly>
+
+                  <label for="fatherName">Father's Name:</label>
+                  <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name" readonly>
+
+                  <label for="email">Email Id:</label>
+                  <input type="email" id="email" name="email"  placeholder="email" readonly>
+
+                  <label for="courseName">Course Name:</label>
+                  <input type="text" id="courseName" name="courseName"value="MCA" placeholder="Course" readonly>
+
+                  <label for="admissionSession">Admission Session:</label>
+                  <input type="text" id="admissionSession" name="admissionSession"  placeholder="Session" readonly>
+
+                </div>
+
+                <div class="column">
+
+                  <label for="Last_Name">Roll no:</label>
+                  <input type="text" id="Roll_no" name="Roll_no" placeholder="Roll_no" readonly>
+
+                  <label for="motherName">Enrollment no:</label>
+                  <input type="text" id="Enrollment_no" name="Enrollment_no" placeholder="Enrollment_no" readonly>
+
+                  <label for="gender">Gender:</label>
+                  <input type="text" id="gender" name="gender" placeholder="Gender" readonly>
+
+                  <label for="branch">Branch:</label>
+                  <input type="text" id="Branch" name="Branch" value="MCA" placeholder="Branch" readonly>
+
+                  <label for="instituteCode">Institute's Name:</label>
+                  <input type="text" id="instituteCode" name="instituteCode" placeholder="Institute's Name:" readonly>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <%}%>
     <!-------------------------------view result  section------------------------------------------------------------------>
     <div id="view-result-section" style="display: none;">
       <h1><br><br><br>view result section</h1>

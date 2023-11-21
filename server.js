@@ -23,8 +23,8 @@ app.post("/studentregister/student", async(req,res) =>{
     try{
         const response = await axios.post(`${APIurl}/studentregister`, req.body);
         if(response.data){
-            //const resultData = await axios.post(`${APIurl}/getResult`,req.body);
-            res.render("student.ejs",{info: response.data});
+            const resultData = await axios.post(`${APIurl}/getResult`,req.body);
+            res.render("student.ejs",{info: resultData.data});
         }else{
             res.render("studentregister.ejs",{message: "*student can not be registered."});
         }
